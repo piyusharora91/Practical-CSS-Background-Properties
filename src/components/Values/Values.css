@@ -1,0 +1,121 @@
+.values-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 88vw;
+    height: 220px;
+    margin: 15px auto;
+    border-radius: 10px;
+    /* position: fixed;
+    bottom: -170px;
+    right: 50%;
+    translate: 50%; */
+}
+
+.values-sub-container {
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.gradient-value-container,
+.backgroundUrl-value-container,
+.backgroundSize-value-container,
+.backgroundPosition-value-container,
+.backgroundRepeat-value-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    margin-top: 5px;
+}
+
+.gradient-value-container {
+    margin-top: 0px;
+}
+
+.backgroundRepeat-value-container {
+    margin-bottom: 10px;
+}
+
+#gradient-label,
+#backgroundUrl-label,
+#backgroundSize-label,
+#backgroundPosition-label,
+#backgroundRepeat-label {
+    width: fit-content;
+    user-select: none;
+    font-size: 1.5rem;
+    text-align: left;
+    margin: 0px;
+    margin-left: 20px;
+}
+
+#gradient-value,
+#backgroundUrl-value,
+#backgroundSize-value,
+#backgroundPosition-value,
+#backgroundRepeat-value {
+    width: 85%;
+    min-height: max-content;
+    height: 30px;
+    text-align: center;
+    font-size: 1.17em;
+    margin: auto;
+    margin-top: 0px;
+}
+
+#backgroundSize-value,
+#backgroundPosition-value,
+#backgroundRepeat-value {
+    font-size: 1.5em;
+}
+
+#gradient-value {
+    height: max-content;
+}
+
+#backgroundUrl-value {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0px auto;
+    bottom: -5px;
+    left: 5px;
+}
+
+.copy-icon {
+    margin: 0px;
+    position: relative;
+    top: 5px;
+    right: 20px;
+    cursor: pointer;
+    width: max-content;
+    height: max-content;
+    background: rgba(63, 63, 135, 0.8);
+    box-shadow: 3px 3px 3px #454242;
+}
+
+.copy-icon:hover {
+    color: rgb(34, 33, 33);
+    user-select: none;
+    outline: none;
+}
+
+.copy-icon:active {
+    transform: scale(0.95);
+    box-shadow: 2px 2px 2px #121212;
+    user-select: none;
+    outline: none;
+}
+
+@media screen and (min-width: 600px) {
+    .values-container {
+        justify-content: space-evenly;
+        bottom: -170px;
+        width: 480px;
+    }
+}
