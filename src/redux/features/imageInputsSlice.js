@@ -1,8 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const url = localStorage.getItem('url') ? localStorage.getItem('url') :
-    'https://images.unsplash.com/photo-1667874430662-ee7db8e9494d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNTgxODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE2Njg3OTIyMzk&ixlib=rb-4.0.3&q=80&w=1080';
-// https://images.unsplash.com/photo-1666213775732-d8fe17b532da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNTgxODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE2Njc5NzU1NTI&ixlib=rb-4.0.3&q=80&w=1080
+    "https://images.unsplash.com/photo-1666213775732-d8fe17b532da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNTgxODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE2Njc5NzU1NTI&ixlib=rb-4.0.3&q=80&w=1080";
 const backgroundSize = localStorage.getItem('backgroundSize') ? localStorage.getItem('backgroundSize') : 'cover';
 const backgroundPosition = localStorage.getItem('backgroundPosition') ? localStorage.getItem('backgroundPosition') :
     'center';
