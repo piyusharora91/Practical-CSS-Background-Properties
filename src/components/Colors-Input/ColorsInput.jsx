@@ -19,7 +19,6 @@ const ColorsInput = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        console.log(directionValue.split('d')[0]);
         if (gradientType === 'radial') {
             toggleClearOperations('buttons', document.getElementsByClassName('gradient-direction'), 'disable');
             toggleClearOperations('number-field', document.getElementById('direction-degree'), 'disable');
@@ -42,11 +41,17 @@ const ColorsInput = () => {
         if (gradientTypeValue === 'radial') {
             toggleClearOperations('buttons', document.getElementsByClassName('gradient-direction'), 'disable');
             toggleClearOperations('number-field', document.getElementById('direction-degree'), 'disable');
-            dispatch(directionUpdate('none'));
         } else {
             toggleClearOperations('buttons', document.getElementsByClassName('gradient-direction'), 'enable');
             toggleClearOperations('number-field', document.getElementById('direction-degree'), 'enable');
-            dispatch(directionUpdate('to right'));
+
+            //for checked or display direction value after returning to linear from radial
+            if (directionValue.includes('to'))
+                toggleClearOperations('buttons', document.getElementsByClassName('gradient-direction'),
+                    'mark', directionValue);
+            else
+                toggleClearOperations('number-field', document.getElementById('direction-degree'),
+                    'mark', directionValue);
         }
         dispatch(gradientTypeUpdate(gradientTypeValue));
     }
