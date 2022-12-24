@@ -68,10 +68,20 @@
     margin-top: 0px;
 }
 
-#backgroundSize-value,
-#backgroundPosition-value,
+#backgroundUrl-value {
+    font-size: 1.18em;
+}
+
+#backgroundSize-value {
+    font-size: 1.25em;
+}
+
+#backgroundPosition-value {
+    font-size: 1.20em;
+}
+
 #backgroundRepeat-value {
-    font-size: 1.5em;
+    font-size: 1.19em;
 }
 
 #gradient-value {
@@ -99,12 +109,14 @@
     border: 1px solid black;
     border-radius: 2px;
     box-shadow: 3px 3px 3px #454242;
+    transition: 0.2s ease-out all;
 }
 
 .copy-icon:hover {
     user-select: none;
     outline: none;
     box-shadow: 4px 4px 4px #454242;
+    translate: -1px -1px;
 }
 
 .copy-icon:active {

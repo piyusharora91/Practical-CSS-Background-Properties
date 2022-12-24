@@ -20,15 +20,17 @@
 
 #reset-all-values-button {
     cursor: pointer;
-    background: #f2f3;
+    background: transparent;
     border: none;
+    text-decoration: underline;
     border-radius: 10px;
     font-size: 22px;
     padding: 10px 20px;
+    transition: 0.3s translate ease-in;
 }
 
 #reset-all-values-button:hover {
-    background: rgba(218, 28, 218, 0.2);
+    translate: 3px -3px;
 }
 
 #reset-all-values-button:active {
