@@ -102,7 +102,6 @@
 }
 
 .copy-icon:hover {
-    color: rgb(34, 33, 33);
     user-select: none;
     outline: none;
     box-shadow: 4px 4px 4px #454242;
