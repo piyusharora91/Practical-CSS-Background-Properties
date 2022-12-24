@@ -87,7 +87,12 @@ const App = () => {
 
   useEffect(() => {
     const body = document.getElementById('App');
+    const newBackgroundImageButton = document.getElementById('change-image-button');
+    const resetValuesButton = document.getElementById('reset-all-values-button');
+
     body.style.color = fontColor;
+    newBackgroundImageButton.style.color = fontColor;
+    resetValuesButton.style.color = fontColor;
   }, [fontColor]);
 
   const resetAllValues = () => {

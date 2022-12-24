@@ -92,7 +92,8 @@
 #change-image-button {
     height: max-content;
     width: 75%;
-    font-size: 15px;
+    font-size: 18px;
+    font-weight: 540;
     padding: 10px;
     color: white;
     border: none;

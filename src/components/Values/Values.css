@@ -95,7 +95,9 @@
     cursor: pointer;
     width: max-content;
     height: max-content;
-    background: rgba(63, 63, 135, 0.8);
+    padding: 0px 3px 0px 1px;
+    border: 1px solid black;
+    border-radius: 2px;
     box-shadow: 3px 3px 3px #454242;
 }
 
@@ -103,6 +105,7 @@
     color: rgb(34, 33, 33);
     user-select: none;
     outline: none;
+    box-shadow: 4px 4px 4px #454242;
 }
 
 .copy-icon:active {
