@@ -19,6 +19,7 @@ const ColorsInput = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        console.log(directionValue.split('d')[0]);
         if (gradientType === 'radial') {
             toggleClearOperations('buttons', document.getElementsByClassName('gradient-direction'), 'disable');
             toggleClearOperations('number-field', document.getElementById('direction-degree'), 'disable');
@@ -124,7 +125,7 @@ const ColorsInput = () => {
                 <span id="rotate-input">
                     <label htmlFor="direction-degree" id="direction-degree-label">
                         <input type="number" id="direction-degree" name="direction-degree"
-                            defaultValue={(directionValue.includes('deg'))}
+                            defaultValue={(directionValue.includes('deg')) ? directionValue.split('d')[0] : ''}
                             className="color-container-text-fields" min={0} max={360} step="5"
                             onChange={(e) => setDirectionDegree(e.target.value)}
                         />
