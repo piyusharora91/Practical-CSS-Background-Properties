@@ -22,6 +22,11 @@ const App = () => {
   const backgroundPosition = useSelector((state) => state.imageReducer.backgroundPosition);
   const backgroundRepeat = useSelector((state) => state.imageReducer.backgroundRepeat);
 
+  //properties target to apply values to
+  const body = document.getElementById('App');
+  const inputsAndValuesContainer = document.querySelectorAll('.inputs-and-values-container');
+  const changeBackgroundImageButton = document.querySelector('#change-image-button');
+
   const finalGradientValue = (gradientType === 'linear') ? returnFinalGradient({
     color1,
     color2,
@@ -36,11 +41,6 @@ const App = () => {
   });
 
   useEffect(() => {
-    //properties target to apply values to
-    const body = document.getElementById('App');
-    const inputsAndValuesContainer = document.querySelectorAll('.inputs-and-values-container');
-    const changeBackgroundImageButton = document.querySelector('#change-image-button');
-
     //user css properties update 
     body.style.backgroundImage = `${finalGradientValue}, url(${imageUrl})`;
     body.style.color = color2;
@@ -64,17 +64,14 @@ const App = () => {
   }, [finalGradientValue, imageUrl]);
 
   useEffect(() => {
-    const body = document.getElementById('App');
     body.style.backgroundSize = backgroundSize;
   }, [backgroundSize]);
 
   useEffect(() => {
-    const body = document.getElementById('App');
     body.style.backgroundPosition = backgroundPosition;
   }, [backgroundPosition]);
 
   useEffect(() => {
-    const body = document.getElementById('App');
     body.style.backgroundRepeat = backgroundRepeat;
   }, [backgroundRepeat]);
 
