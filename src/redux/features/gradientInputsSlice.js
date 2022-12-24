@@ -5,6 +5,7 @@ const color2 = localStorage.getItem('color2') ? localStorage.getItem('color2') :
 const alpha = localStorage.getItem('alpha') ? localStorage.getItem('alpha') : 0.5;
 const gradientType = localStorage.getItem('gradientType') ? localStorage.getItem('gradientType') : 'linear';
 const direction = (localStorage.getItem('direction')) ? localStorage.getItem('direction') : 'to right';
+const fontColor = localStorage.getItem('fontColor') ? localStorage.getItem('fontColor') : '#000000';
 
 const initialState = {
     color1,
@@ -12,6 +13,7 @@ const initialState = {
     alpha,
     gradientType,
     direction,
+    fontColor
 }
 
 const gradientSlice = createSlice({
@@ -38,8 +40,12 @@ const gradientSlice = createSlice({
             state.direction = action.payload;
             localStorage.setItem('direction', state.direction);
         },
+        fontColorUpdate(state, action) {
+            state.fontColor = action.payload;
+            localStorage.setItem('fontColor', state.fontColor);
+        },
     }
 });
 
-export const { color1Update, color2Update, alphaUpdate, gradientTypeUpdate, directionUpdate } = gradientSlice.actions;
+export const { color1Update, color2Update, alphaUpdate, gradientTypeUpdate, directionUpdate, fontColorUpdate } = gradientSlice.actions;
 export default gradientSlice.reducer;

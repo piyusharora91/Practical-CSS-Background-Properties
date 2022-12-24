@@ -1,0 +1,42 @@
+.other-inputs-container {
+    padding-top: 14px;
+    align-items: center;
+    width: 95vw;
+    flex-wrap: wrap;
+}
+
+#font-colors-input-label,
+#font-colors-input {
+    cursor: pointer;
+}
+
+#font-colors-input-label span {
+    font-size: 26px;
+}
+
+#font-colors-input {
+    margin-left: 10px;
+}
+
+#reset-all-values-button {
+    cursor: pointer;
+    background: #f2f3;
+    border: none;
+    border-radius: 10px;
+    font-size: 22px;
+    padding: 10px 20px;
+}
+
+#reset-all-values-button:hover {
+    background: rgba(218, 28, 218, 0.2);
+}
+
+#reset-all-values-button:active {
+    scale: 0.99;
+}
+
+@media screen and (min-width: 600px) {
+    .other-inputs-container {
+        width: 550px;
+    }
+}
