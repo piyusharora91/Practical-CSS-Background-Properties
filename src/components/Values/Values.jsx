@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import './Values.css';
-import dragIcon from '../../assets/drag-icon.svg';
 import { removeCamelCaseAndAddSpace } from '../../common-files/textCasingConversions';
 import copyParticularSectionToClipBoard from '../../common-files/copySections';
 import returnFinalGradient from '../../common-files/returnFinalGradient';

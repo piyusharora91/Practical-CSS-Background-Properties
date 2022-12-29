@@ -1,10 +1,6 @@
 import './App.css';
 import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { color1Update, color2Update, alphaUpdate, gradientTypeUpdate, directionUpdate, fontColorUpdate } from
-  './redux/features/gradientInputsSlice';
-import { updateImage, updateBackgroundSize, updateBackgroundPosition, updateBackgroundRepeat } from
-  './redux/features/imageInputsSlice';
+import { useSelector } from 'react-redux';
 import returnFinalGradient from './common-files/returnFinalGradient';
 import convertHexToRgbA from './common-files/convertHexToRgbA';
 import Header from './components/Header/Header';
@@ -14,7 +10,6 @@ import ImageInput from './components/Image-Input/ImageInput';
 import OtherInputs from './components/Other-Inputs/OtherInputs';
 
 const App = () => {
-  const dispatch = useDispatch();
 
   //gradient input values from redux
   const color1 = useSelector((state) => state.gradientReducer.color1);

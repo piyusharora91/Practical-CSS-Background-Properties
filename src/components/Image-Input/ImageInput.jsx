@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import './ImageInput.css';
-import dragIcon from '../../assets/drag-icon.svg';
 import { changeCasingForSingleOrMultipleWords } from '../../common-files/textCasingConversions';
 import { RotatingLines } from 'react-loader-spinner';
 import { useDispatch, useSelector } from 'react-redux';

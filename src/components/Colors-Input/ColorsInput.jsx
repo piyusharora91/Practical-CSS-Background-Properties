@@ -1,7 +1,6 @@
 import React from 'react';
 import './ColorsInput.css';
 import { useEffect } from 'react';
-import dragIcon from '../../assets/drag-icon.svg';
 import { changeCasingForSingleOrMultipleWords } from '../../common-files/textCasingConversions';
 import toggleClearOperations from '../../common-files/toggleClearOperations';
 import { useDispatch, useSelector } from 'react-redux';
