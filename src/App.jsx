@@ -97,20 +97,6 @@ const App = () => {
 
   const resetAllValues = () => {
     localStorage.clear();
-
-    //clear all gradient related values
-    // dispatch(color1Update('#E5EBFF'));
-    // dispatch(color2Update('#045671'));
-    // dispatch(alphaUpdate(0.5));
-    // dispatch(gradientTypeUpdate('linear'));
-    // dispatch(directionUpdate('to right'));
-    // dispatch(fontColorUpdate('#000000'));
-
-    // //clear all image related values
-    // dispatch(updateImage('https://images.unsplash.com/photo-1666213775732-d8fe17b532da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNTgxODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE2Njc5NzU1NTI&ixlib=rb-4.0.3&q=80&w=1080'));
-    // dispatch(updateBackgroundSize('cover'));
-    // dispatch(updateBackgroundPosition('center'));
-    // dispatch(updateBackgroundRepeat('no-repeat'));
     location.reload();
   }
 

@@ -21,23 +21,17 @@ input[type="radio"] {
   font-family: 'Caveat', cursive;
 }
 
+.drag-target-wrapper-component {
+  border-radius: 12px;
+  border: 8px double black;
+}
+
 .container-header {
   display: flex;
   width: 100%;
   margin-top: 10px;
   justify-content: center;
-}
-
-.drag-icon {
-  width: 32px;
-  height: auto;
-  cursor: grab;
-  -webkit-user-drag: none;
-  -moz-user-drag: none;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
+  cursor: initial;
 }
 
 .container-heading {
@@ -52,12 +46,18 @@ input[type="radio"] {
 
 .inputs-container {
   width: 88vw;
+  height: max-content;
+  margin: 20px auto;
+  border-radius: 12px;
+}
+
+.inputs-container .drag-target-wrapper-component {
+  height: 95%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   font-size: 1.4rem;
   justify-content: space-evenly;
-  height: max-content;
-  margin: 20px auto;
   border-radius: 10px;
   padding-bottom: 15px;
 }
@@ -74,6 +74,12 @@ input[type="radio"] {
 }
 
 @media screen and (min-width: 600px) {
+  .drag-target-wrapper-component {
+    margin: auto;
+    cursor: grab;
+    border-radius: 15px;
+  }
+
   .inputs-container {
     justify-content: space-around;
     width: 480px;

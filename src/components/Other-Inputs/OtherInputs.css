@@ -1,13 +1,20 @@
 .other-inputs-container {
-    padding-top: 14px;
-    align-items: center;
     width: 95vw;
+}
+
+.other-inputs-container .drag-target-wrapper-component {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
     flex-wrap: wrap;
+    height: 70%;
+    width: 95.5%;
 }
 
 #font-colors-input-label,
 #font-colors-input {
     cursor: pointer;
+    margin-top: 5px;
 }
 
 #font-colors-input-label span {
@@ -22,10 +29,10 @@
     cursor: pointer;
     background: transparent;
     border: none;
+    margin-top: 5px;
     text-decoration: underline;
     border-radius: 10px;
     font-size: 22px;
-    padding: 10px 20px;
     transition: 0.3s translate ease-in;
 }
 
@@ -40,5 +47,17 @@
 @media screen and (min-width: 600px) {
     .other-inputs-container {
         width: 550px;
+    }
+
+    .other-inputs-container .drag-target-wrapper-component {
+        height: 55%;
+        width: 97%;
+    }
+
+    #font-colors-input-label,
+    #font-colors-input {
+        margin-top: 0px;
+        position: relative;
+        top: 2px;
     }
 }

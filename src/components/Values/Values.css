@@ -6,17 +6,24 @@
     width: 88vw;
     height: 220px;
     margin: 15px auto;
-    border-radius: 10px;
+    border-radius: 12px;
     /* position: fixed;
     bottom: -170px;
     right: 50%;
     translate: 50%; */
 }
 
+.values-container .drag-target-wrapper-component {
+    overflow: auto;
+    height: 100%;
+    width: 97%;
+}
+
 .values-sub-container {
     overflow-x: hidden;
     overflow-y: auto;
     width: 100%;
+    cursor: initial;
 }
 
 .gradient-value-container,
@@ -131,5 +138,6 @@
         justify-content: space-evenly;
         bottom: -170px;
         width: 480px;
+        border-radius: 15px;
     }
 }

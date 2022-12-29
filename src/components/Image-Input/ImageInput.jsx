@@ -84,137 +84,139 @@ const ImageInput = () => {
 
     return (
         <div className="inputs-container image-inputs-container inputs-and-values-container">
-            <div className="container-header">
-                <img src={dragIcon} alt="drag-icon" className='drag-icon' />
-                <h1 className="container-heading">Inputs Image</h1>
-            </div>
-            {/* <!-- Image size input section starts here --> */}
-            <div className="image-size-container">
-                <h1>Image Size</h1>
-                {imageSizeOptions.map(sizeOption => {
-                    return (
-                        <label htmlFor={sizeOption} key={sizeOption}>
-                            <input type="radio" name="image-size"
-                                className="image-size-options"
-                                id={sizeOption} value={sizeOption}
-                                defaultChecked={sizeOption === backgroundSize}
-                                onChange={(e) => changeImageSize(e.target.value)}
-                            />
-                            {changeCasingForSingleOrMultipleWords(sizeOption)}
+            <div className='drag-target-wrapper-component'>
+                <div className="container-header">
+                    {/* <img src={dragIcon} alt="drag-icon" className='drag-icon' /> */}
+                    <h1 className="container-heading">Inputs Image</h1>
+                </div>
+                {/* <!-- Image size input section starts here --> */}
+                <div className="image-size-container">
+                    <h1>Image Size</h1>
+                    {imageSizeOptions.map(sizeOption => {
+                        return (
+                            <label htmlFor={sizeOption} key={sizeOption}>
+                                <input type="radio" name="image-size"
+                                    className="image-size-options"
+                                    id={sizeOption} value={sizeOption}
+                                    defaultChecked={sizeOption === backgroundSize}
+                                    onChange={(e) => changeImageSize(e.target.value)}
+                                />
+                                {changeCasingForSingleOrMultipleWords(sizeOption)}
+                            </label>
+                        );
+                    })}
+                    <div className="image-size-length-input enable-custom-values-container">
+                        <label htmlFor="enable-custom-size">
+                            <input type="checkbox" id="enable-custom-size" name="enable-custom-size" className='toggle-custom-inputs-button'
+                                onChange={(e) => toggleCustomInputValues(e)} />
+                            <span id="enable-custom-size-label" >
+                                Custom Size
+                            </span>
                         </label>
-                    );
-                })}
-                <div className="image-size-length-input enable-custom-values-container">
-                    <label htmlFor="enable-custom-size">
-                        <input type="checkbox" id="enable-custom-size" name="enable-custom-size" className='toggle-custom-inputs-button'
-                            onChange={(e) => toggleCustomInputValues(e)} />
-                        <span id="enable-custom-size-label" >
-                            Custom Size
-                        </span>
-                    </label>
-                    <div className="custom-inputs-container hide-custom-inputs-container">
-                        {numberTextFields.map(field => {
-                            return (
-                                <label htmlFor={`numeric-size-length-${field}`} key={field}>
-                                    <input type="number" id={`numeric-size-length-${field}`} min="0" name="numeric-size-length"
-                                        className="image-container-text-fields image-size-custom-input"
-                                        onChange={(e) => customChange(e.target.value)} />
-                                    {changeCasingForSingleOrMultipleWords(field)}
-                                </label>
-                            )
-                        })}
-                        <div className="length-metrics">
-                            {imageCustomInputMetrics.map(metricOption => {
+                        <div className="custom-inputs-container hide-custom-inputs-container">
+                            {numberTextFields.map(field => {
                                 return (
-                                    <label htmlFor={`${metricOption}-for-size`} key={metricOption}>
-                                        <input type="radio" name="image-size-metric" id={`${metricOption}-for-size`}
-                                            value={metricOption} className="image-size-metric-options"
-                                            defaultChecked={metricOption === 'px'}
-                                            onChange={(e) => changeInputMetric(e.target.value)} />
-                                        {metricOption}
+                                    <label htmlFor={`numeric-size-length-${field}`} key={field}>
+                                        <input type="number" id={`numeric-size-length-${field}`} min="0" name="numeric-size-length"
+                                            className="image-container-text-fields image-size-custom-input"
+                                            onChange={(e) => customChange(e.target.value)} />
+                                        {changeCasingForSingleOrMultipleWords(field)}
                                     </label>
-                                );
+                                )
                             })}
+                            <div className="length-metrics">
+                                {imageCustomInputMetrics.map(metricOption => {
+                                    return (
+                                        <label htmlFor={`${metricOption}-for-size`} key={metricOption}>
+                                            <input type="radio" name="image-size-metric" id={`${metricOption}-for-size`}
+                                                value={metricOption} className="image-size-metric-options"
+                                                defaultChecked={metricOption === 'px'}
+                                                onChange={(e) => changeInputMetric(e.target.value)} />
+                                            {metricOption}
+                                        </label>
+                                    );
+                                })}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            {/* <!-- Image size input section ends here --> */}
+                {/* <!-- Image size input section ends here --> */}
 
-            {/* <!-- Image position input section starts here --> */}
-            <div className="image-position-container">
-                <h1>Image Position</h1>
-                <div className="position-input-container">
-                    {Object.keys(imagePositionInput).map(option => {
+                {/* <!-- Image position input section starts here --> */}
+                <div className="image-position-container">
+                    <h1>Image Position</h1>
+                    <div className="position-input-container">
+                        {Object.keys(imagePositionInput).map(option => {
+                            return (
+                                <label htmlFor={`position-input-${option}`} key={option}
+                                    id={`position-input-${option}-label`}>
+                                    <input type="checkbox" value={imagePositionInput[option]}
+                                        name="position-input"
+                                        id={`position-input-${option}`}
+                                        defaultChecked={option === 'first-center'}
+                                        onChange={(e) => changeImagePosition(e.target.value)} />
+                                    {changeCasingForSingleOrMultipleWords(imagePositionInput[option])}
+                                </label>
+                            )
+                        })}
+                    </div>
+
+                    <div className="image-position-length-input-container enable-custom-values-container">
+                        <label htmlFor="enable-custom-position">
+                            <input type="checkbox" id="enable-custom-position" name="enable-custom-position"
+                                className='toggle-custom-inputs-button' onChange={(e) => toggleCustomInputValues(e)} />
+                            <span id="enable-custom-position-label">
+                                Custom Position
+                            </span>
+                        </label>
+                        <div className="custom-inputs-container hide-custom-inputs-container">
+                            {numberTextFields.map(field => {
+                                return (
+                                    <label htmlFor={`numeric-position-length-${field}`} key={field}>
+                                        <input type="number" id={`numeric-position-length-${field}`} min="0" name="numeric-position-length"
+                                            className="image-container-text-fields image-position-custom-input"
+                                            onChange={(e) => customChange(e.target.value)} />
+                                        {changeCasingForSingleOrMultipleWords(field)}
+                                    </label>
+                                )
+                            })}
+                            <div className="length-metrics">
+                                {imageCustomInputMetrics.map(metricOption => {
+                                    return (
+                                        <label htmlFor={`${metricOption}-for-position`} key={metricOption}>
+                                            <input type="radio" name="image-position-metric" id={`${metricOption}-for-position`}
+                                                defaultValue={metricOption === backgroundPosition} className="image-position-metric-options"
+                                                defaultChecked={metricOption === 'px'}
+                                                onChange={(e) => changeInputMetric(e.target.value)} />
+                                            {metricOption}
+                                        </label>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* <!-- Image position input section ends here --> */}
+                {/* <!-- Image repeat input section starts here --> */}
+                <div className="image-repeat-container">
+                    <h1>Image Repeat</h1>
+                    {imageRepeatOptions.map(repeatOption => {
                         return (
-                            <label htmlFor={`position-input-${option}`} key={option}
-                                id={`position-input-${option}-label`}>
-                                <input type="checkbox" value={imagePositionInput[option]}
-                                    name="position-input"
-                                    id={`position-input-${option}`}
-                                    defaultChecked={option === 'first-center'}
-                                    onChange={(e) => changeImagePosition(e.target.value)} />
-                                {changeCasingForSingleOrMultipleWords(imagePositionInput[option])}
+                            <label htmlFor={repeatOption} key={repeatOption}>
+                                <input type="radio"
+                                    name="image-repeat-property"
+                                    className="image-repeat-property"
+                                    id={repeatOption} value={repeatOption}
+                                    defaultChecked={repeatOption === backgroundRepeat}
+                                    onChange={(e) => changeImageRepeat(e.target.value)} />
+                                {changeCasingForSingleOrMultipleWords(repeatOption)}
                             </label>
-                        )
+                        );
                     })}
                 </div>
-
-                <div className="image-position-length-input-container enable-custom-values-container">
-                    <label htmlFor="enable-custom-position">
-                        <input type="checkbox" id="enable-custom-position" name="enable-custom-position"
-                            className='toggle-custom-inputs-button' onChange={(e) => toggleCustomInputValues(e)} />
-                        <span id="enable-custom-position-label">
-                            Custom Position
-                        </span>
-                    </label>
-                    <div className="custom-inputs-container hide-custom-inputs-container">
-                        {numberTextFields.map(field => {
-                            return (
-                                <label htmlFor={`numeric-position-length-${field}`} key={field}>
-                                    <input type="number" id={`numeric-position-length-${field}`} min="0" name="numeric-position-length"
-                                        className="image-container-text-fields image-position-custom-input"
-                                        onChange={(e) => customChange(e.target.value)} />
-                                    {changeCasingForSingleOrMultipleWords(field)}
-                                </label>
-                            )
-                        })}
-                        <div className="length-metrics">
-                            {imageCustomInputMetrics.map(metricOption => {
-                                return (
-                                    <label htmlFor={`${metricOption}-for-position`} key={metricOption}>
-                                        <input type="radio" name="image-position-metric" id={`${metricOption}-for-position`}
-                                            defaultValue={metricOption === backgroundPosition} className="image-position-metric-options"
-                                            defaultChecked={metricOption === 'px'}
-                                            onChange={(e) => changeInputMetric(e.target.value)} />
-                                        {metricOption}
-                                    </label>
-                                );
-                            })}
-                        </div>
-                    </div>
-                </div>
+                {/* <!-- Image repeat input section ends here --> */}
+                <button id="change-image-button" onClick={getNewImage}>New Background Image</button>
             </div>
-            {/* <!-- Image position input section ends here --> */}
-            {/* <!-- Image repeat input section starts here --> */}
-            <div className="image-repeat-container">
-                <h1>Image Repeat</h1>
-                {imageRepeatOptions.map(repeatOption => {
-                    return (
-                        <label htmlFor={repeatOption} key={repeatOption}>
-                            <input type="radio"
-                                name="image-repeat-property"
-                                className="image-repeat-property"
-                                id={repeatOption} value={repeatOption}
-                                defaultChecked={repeatOption === backgroundRepeat}
-                                onChange={(e) => changeImageRepeat(e.target.value)} />
-                            {changeCasingForSingleOrMultipleWords(repeatOption)}
-                        </label>
-                    );
-                })}
-            </div>
-            {/* <!-- Image repeat input section ends here --> */}
-            <button id="change-image-button" onClick={getNewImage}>New Background Image</button>
         </div>
     )
 }

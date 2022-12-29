@@ -38,26 +38,28 @@ const Values = () => {
 
     return (
         <div className="values-container inputs-and-values-container">
-            <div className="container-header">
-                <img src={dragIcon} alt="drag-icon" className='drag-icon' />
-                <h1 className="container-heading">Values</h1>
-            </div>
-            <div className='values-sub-container'>
-                {Object.keys(toDisplayFields).map(displayField => {
-                    return (
-                        <div className={`${displayField}-value-container`}
-                            key={`${displayField}-key`}>
-                            <h1 id={`${displayField}-label`}>
-                                {removeCamelCaseAndAddSpace(displayField)}:
-                            </h1>
-                            <h5 className="copy-icon" onClick={() => copyParticularSectionToClipBoard(toDisplayFields[displayField])}>
-                                COPY
-                            </h5>
-                            <h3 id={`${displayField}-value`}>{(toDisplayFields[displayField]) ? (toDisplayFields[displayField] + ';') : ''}</h3>
-                        </div>
-                    );
-                })
-                }
+            <div className='drag-target-wrapper-component'>
+                <div className="container-header">
+                    {/* <img src={dragIcon} alt="drag-icon" className='drag-icon' /> */}
+                    <h1 className="container-heading">Values</h1>
+                </div>
+                <div className='values-sub-container'>
+                    {Object.keys(toDisplayFields).map(displayField => {
+                        return (
+                            <div className={`${displayField}-value-container`}
+                                key={`${displayField}-key`}>
+                                <h1 id={`${displayField}-label`}>
+                                    {removeCamelCaseAndAddSpace(displayField)}:
+                                </h1>
+                                <h5 className="copy-icon" onClick={() => copyParticularSectionToClipBoard(toDisplayFields[displayField])}>
+                                    COPY
+                                </h5>
+                                <h3 id={`${displayField}-value`}>{(toDisplayFields[displayField]) ? (toDisplayFields[displayField] + ';') : ''}</h3>
+                            </div>
+                        );
+                    })
+                    }
+                </div>
             </div>
         </div>
     )

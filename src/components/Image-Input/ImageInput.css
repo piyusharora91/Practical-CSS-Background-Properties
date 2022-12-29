@@ -7,6 +7,10 @@
     flex-wrap: wrap;
 }
 
+.image-inputs-container .drag-target-wrapper-component {
+    height: 94%;
+}
+
 .image-size-container,
 .image-position-container,
 .image-repeat-container {
@@ -16,6 +20,7 @@
     justify-content: flex-start;
     width: 70%;
     margin-top: 15px;
+    cursor: initial;
 }
 
 .image-size-container {
@@ -115,6 +120,8 @@
     .image-inputs-container {
         justify-content: space-evenly;
     }
+
+    .image-inputs-container .drag-target-wrapper-component {}
 
     .image-size-container {
         width: 50%;
