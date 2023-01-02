@@ -81,7 +81,7 @@
      .gradient-types-container,
      .gradient-directions-container {
          flex-direction: column;
-         width: 40%;
+         width: 50%;
          align-items: center;
      }
  }

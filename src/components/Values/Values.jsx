@@ -38,15 +38,15 @@ const Values = ({ Draggable }) => {
     };
 
     return (
-        <Draggable handle=".drag-target-wrapper-component" nodeRef={nodeRef}>
+        <Draggable cancel=".non-draggable-containers" nodeRef={nodeRef}>
             {/* // bounds={{ left: 0, top: 0, right: 100, bottom: 200 }}> */}
             <div className="values-container inputs-and-values-container" id='values-container'
                 ref={nodeRef}>
                 <div className='drag-target-wrapper-component'>
-                    <div className="container-header">
+                    <div className="container-header non-draggable-containers">
                         <h1 className="container-heading">Values</h1>
                     </div>
-                    <div className='values-sub-container'>
+                    <div className='values-sub-container non-draggable-containers'>
                         {Object.keys(toDisplayFields).map(displayField => {
                             return (
                                 <div className={`${displayField}-value-container`}

@@ -71,15 +71,15 @@ const ColorsInput = ({ Draggable }) => {
     }
 
     return (
-        <Draggable handle=".drag-target-wrapper-component" nodeRef={nodeRef}>
+        <Draggable cancel=".non-draggable-containers" nodeRef={nodeRef}>
             <div className="inputs-container gradient-inputs-container inputs-and-values-container"
                 ref={nodeRef}>
                 <div className='drag-target-wrapper-component'>
-                    <div className="container-header">
+                    <div className="container-header non-draggable-containers">
                         <h1 className="container-heading">Color Inputs</h1>
                     </div>
                     {/* <!-- color inputs and alpha  --> */}
-                    <div className="color-inputs-container">
+                    <div className="color-inputs-container non-draggable-containers">
                         <label htmlFor="Color1">
                             <input type="color" id="color1" name="Color1" defaultValue={color1}
                                 onChange={(e) => changeColor1(e.target.value)} className="color-inputs" />
@@ -98,7 +98,7 @@ const ColorsInput = ({ Draggable }) => {
                         </label>
                     </div>
                     {/* <!-- Gradients change --> */}
-                    <div className="gradient-types-container">
+                    <div className="gradient-types-container non-draggable-containers">
                         <h1>Gradient Types</h1>
                         {gradientTypes.map(type => {
                             return (
@@ -115,7 +115,7 @@ const ColorsInput = ({ Draggable }) => {
                         })}
                     </div>
                     {/* <!-- Gradients Direction Change --> */}
-                    <div className="gradient-directions-container" id="directions">
+                    <div className="gradient-directions-container non-draggable-containers" id="directions">
                         <h1>Gradient Directions</h1>
                         {gradientDirectionNames.map(direction => {
                             return (

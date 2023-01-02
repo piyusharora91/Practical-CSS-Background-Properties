@@ -121,8 +121,6 @@
         justify-content: space-evenly;
     }
 
-    .image-inputs-container .drag-target-wrapper-component {}
-
     .image-size-container {
         width: 50%;
         margin-top: 15px;
@@ -146,9 +144,10 @@
     }
 
     .image-repeat-container {
-        width: 60%;
+        width: 100%;
         justify-content: space-between;
         margin-top: 15px;
+        padding: 0px 20%;
     }
 
     .position-input-container {

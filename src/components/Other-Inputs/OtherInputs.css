@@ -15,6 +15,14 @@
     width: 95.5%;
 }
 
+.other-inputs {
+    cursor: initial;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
 #font-colors-input-label,
 #font-colors-input {
     cursor: pointer;
@@ -33,11 +41,12 @@
     cursor: pointer;
     background: transparent;
     border: none;
-    margin-top: 5px;
+    padding: 0px;
     text-decoration: underline;
-    border-radius: 10px;
     font-size: 22px;
     transition: 0.3s translate ease-in;
+    position: relative;
+    top: 3px;
 }
 
 #reset-all-values-button:hover {

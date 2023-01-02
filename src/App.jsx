@@ -9,7 +9,7 @@ import ColorsInput from './components/Colors-Input/ColorsInput';
 import ImageInput from './components/Image-Input/ImageInput';
 import OtherInputs from './components/Other-Inputs/OtherInputs';
 
-import Draggable, { DraggableCore } from "react-draggable";
+import Draggable from "react-draggable";
 
 const App = () => {
 

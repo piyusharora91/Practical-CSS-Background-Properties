@@ -83,14 +83,14 @@ const ImageInput = ({ Draggable }) => {
     }
 
     return (
-        <Draggable handle='.drag-target-wrapper-component' nodeRef={nodeRef}>
+        <Draggable cancel=".non-draggable-containers" nodeRef={nodeRef}>
             <div className="inputs-container image-inputs-container inputs-and-values-container" ref={nodeRef}>
                 <div className='drag-target-wrapper-component'>
-                    <div className="container-header">
+                    <div className="container-header non-draggable-containers">
                         <h1 className="container-heading">Inputs Image</h1>
                     </div>
                     {/* <!-- Image size input section starts here --> */}
-                    <div className="image-size-container">
+                    <div className="image-size-container non-draggable-containers">
                         <h1>Image Size</h1>
                         {imageSizeOptions.map(sizeOption => {
                             return (
@@ -143,7 +143,7 @@ const ImageInput = ({ Draggable }) => {
                     {/* <!-- Image size input section ends here --> */}
 
                     {/* <!-- Image position input section starts here --> */}
-                    <div className="image-position-container">
+                    <div className="image-position-container non-draggable-containers">
                         <h1>Image Position</h1>
                         <div className="position-input-container">
                             {Object.keys(imagePositionInput).map(option => {
@@ -198,7 +198,7 @@ const ImageInput = ({ Draggable }) => {
                     </div>
                     {/* <!-- Image position input section ends here --> */}
                     {/* <!-- Image repeat input section starts here --> */}
-                    <div className="image-repeat-container">
+                    <div className="image-repeat-container non-draggable-containers">
                         <h1>Image Repeat</h1>
                         {imageRepeatOptions.map(repeatOption => {
                             return (
@@ -215,7 +215,9 @@ const ImageInput = ({ Draggable }) => {
                         })}
                     </div>
                     {/* <!-- Image repeat input section ends here --> */}
-                    <button id="change-image-button" onClick={getNewImage}>New Background Image</button>
+                    <button id="change-image-button" onClick={getNewImage} className="non-draggable-containers">
+                        New Background Image
+                    </button>
                 </div>
             </div>
         </Draggable>
