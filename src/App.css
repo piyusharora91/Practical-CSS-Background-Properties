@@ -19,6 +19,7 @@ input[type="radio"] {
   display: flex;
   flex-direction: column;
   font-family: 'Caveat', cursive;
+  background-color: rgb(63, 30, 155);
 }
 
 .drag-target-wrapper-component {
