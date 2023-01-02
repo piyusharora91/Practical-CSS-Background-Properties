@@ -9,6 +9,8 @@ import ColorsInput from './components/Colors-Input/ColorsInput';
 import ImageInput from './components/Image-Input/ImageInput';
 import OtherInputs from './components/Other-Inputs/OtherInputs';
 
+import Draggable, { DraggableCore } from "react-draggable";
+
 const App = () => {
 
   //gradient input values from redux
@@ -98,10 +100,10 @@ const App = () => {
   return (
     <div className="App" id='App'>
       <Header />
-      <Values />
-      <ColorsInput />
-      <ImageInput />
-      <OtherInputs resetAllValues={resetAllValues} />
+      <Values Draggable={Draggable} />
+      <ColorsInput Draggable={Draggable} />
+      <ImageInput Draggable={Draggable} />
+      <OtherInputs resetAllValues={resetAllValues} Draggable={Draggable} />
     </div>
   );
 }

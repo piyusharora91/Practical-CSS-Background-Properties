@@ -4,6 +4,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  user-select: none;
 }
 
 label,
@@ -16,7 +17,6 @@ input[type="radio"] {
   width: 100vw;
   height: 100vh;
   display: flex;
-  overflow: auto;
   flex-direction: column;
   font-family: 'Caveat', cursive;
 }

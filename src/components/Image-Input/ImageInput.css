@@ -1,8 +1,8 @@
 .image-inputs-container {
-    /* position: fixed;
+    position: fixed;
     top: 15%;
     right: -420px;
-    width: 480px; */
+    width: 480px;
     display: flex;
     flex-wrap: wrap;
 }

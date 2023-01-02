@@ -1,11 +1,13 @@
 import React from 'react';
+import { useRef } from 'react';
 import { useSelector } from 'react-redux';
 import './Values.css';
 import { removeCamelCaseAndAddSpace } from '../../common-files/textCasingConversions';
 import copyParticularSectionToClipBoard from '../../common-files/copySections';
 import returnFinalGradient from '../../common-files/returnFinalGradient';
 
-const Values = () => {
+const Values = ({ Draggable }) => {
+    const nodeRef = useRef(null);
     //gradient input values from redux
     const color1 = useSelector((state) => state.gradientReducer.color1);
     const color2 = useSelector((state) => state.gradientReducer.color2);
@@ -36,31 +38,34 @@ const Values = () => {
     };
 
     return (
-        <div className="values-container inputs-and-values-container">
-            <div className='drag-target-wrapper-component'>
-                <div className="container-header">
-                    {/* <img src={dragIcon} alt="drag-icon" className='drag-icon' /> */}
-                    <h1 className="container-heading">Values</h1>
-                </div>
-                <div className='values-sub-container'>
-                    {Object.keys(toDisplayFields).map(displayField => {
-                        return (
-                            <div className={`${displayField}-value-container`}
-                                key={`${displayField}-key`}>
-                                <h1 id={`${displayField}-label`}>
-                                    {removeCamelCaseAndAddSpace(displayField)}:
-                                </h1>
-                                <h5 className="copy-icon" onClick={() => copyParticularSectionToClipBoard(toDisplayFields[displayField])}>
-                                    COPY
-                                </h5>
-                                <h3 id={`${displayField}-value`}>{(toDisplayFields[displayField]) ? (toDisplayFields[displayField] + ';') : ''}</h3>
-                            </div>
-                        );
-                    })
-                    }
+        <Draggable handle=".drag-target-wrapper-component" nodeRef={nodeRef}>
+            {/* // bounds={{ left: 0, top: 0, right: 100, bottom: 200 }}> */}
+            <div className="values-container inputs-and-values-container" id='values-container'
+                ref={nodeRef}>
+                <div className='drag-target-wrapper-component'>
+                    <div className="container-header">
+                        <h1 className="container-heading">Values</h1>
+                    </div>
+                    <div className='values-sub-container'>
+                        {Object.keys(toDisplayFields).map(displayField => {
+                            return (
+                                <div className={`${displayField}-value-container`}
+                                    key={`${displayField}-key`}>
+                                    <h1 id={`${displayField}-label`}>
+                                        {removeCamelCaseAndAddSpace(displayField)}:
+                                    </h1>
+                                    <h5 className="copy-icon" onClick={() => copyParticularSectionToClipBoard(toDisplayFields[displayField])}>
+                                        COPY
+                                    </h5>
+                                    <h3 id={`${displayField}-value`}>{(toDisplayFields[displayField]) ? (toDisplayFields[displayField] + ';') : ''}</h3>
+                                </div>
+                            );
+                        })
+                        }
+                    </div>
                 </div>
             </div>
-        </div>
+        </Draggable>
     )
 }
 

@@ -1,9 +1,7 @@
  .gradient-inputs-container {
-     /*
-    position: fixed;
-    top: 15%;
-    left: -81%;
-    */
+     position: fixed;
+     top: 100px;
+     left: -380px;
  }
 
  .gradient-inputs-container .drag-target-wrapper-component {
@@ -72,7 +70,7 @@
 
  @media screen and (min-width: 600px) {
      .gradient-inputs-container {
-         left: -470px;
+         left: -420px;
      }
 
      .gradient-inputs-container .drag-target-wrapper-component {

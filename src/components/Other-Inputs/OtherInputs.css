@@ -1,5 +1,9 @@
 .other-inputs-container {
     width: 95vw;
+    position: fixed;
+    bottom: -70px;
+    right: 50%;
+    translate: 50%;
 }
 
 .other-inputs-container .drag-target-wrapper-component {
@@ -7,7 +11,7 @@
     justify-content: space-around;
     align-items: flex-end;
     flex-wrap: wrap;
-    height: 70%;
+    height: 80%;
     width: 95.5%;
 }
 
@@ -50,7 +54,7 @@
     }
 
     .other-inputs-container .drag-target-wrapper-component {
-        height: 55%;
+        height: 72%;
         width: 97%;
     }
 
