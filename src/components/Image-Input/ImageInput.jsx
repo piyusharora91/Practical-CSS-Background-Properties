@@ -21,7 +21,7 @@ const imagePositionInput = {
     'second-center': 'center'
 };
 
-const ImageInput = ({ Draggable }) => {
+const ImageInput = ({ Draggable, handleDragStart, handleDragStop }) => {
     const dispatch = useDispatch();
     const nodeRef = useRef(null);
     const backgroundSize = useSelector((state) => state.imageReducer.backgroundSize);
@@ -31,24 +31,24 @@ const ImageInput = ({ Draggable }) => {
     const getNewImage = () => {
         const API_KEY = 'x3WsiXWLHCUOy84GtpkdtdwdsQgsZcvu4HBpt9O0hic';
         const API_URL = `https://api.unsplash.com/photos/random/?client_id=${API_KEY}`;
-        <RotatingLines
-            strokeColor="grey"
-            strokeWidth="5"
-            animationDuration="0.75"
-            width="96"
-            visible={true}
-        />
+        // <RotatingLines
+        //     strokeColor="grey"
+        //     strokeWidth="5"
+        //     animationDuration="0.75"
+        //     width="96"
+        //     visible={true}
+        // />
         axios.get(API_URL).then(response => {
             const imageData = response.data;
             dispatch(updateImage(imageData.urls.regular));
         });
-        <RotatingLines
-            strokeColor="grey"
-            strokeWidth="5"
-            animationDuration="0.75"
-            width="96"
-            visible={false}
-        />
+        // <RotatingLines
+        //     strokeColor="grey"
+        //     strokeWidth="5"
+        //     animationDuration="0.75"
+        //     width="96"
+        //     visible={false}
+        // />
     }
 
     const changeImageSize = (sizeValue) => {
@@ -83,7 +83,8 @@ const ImageInput = ({ Draggable }) => {
     }
 
     return (
-        <Draggable cancel=".non-draggable-containers" nodeRef={nodeRef}>
+        <Draggable cancel=".non-draggable-containers" nodeRef={nodeRef} onStart={(e) => handleDragStart(e)}
+            onStop={(e) => handleDragStop(e)}>
             <div className="inputs-container image-inputs-container inputs-and-values-container" ref={nodeRef}>
                 <div className='drag-target-wrapper-component'>
                     <div className="container-header non-draggable-containers">
@@ -215,9 +216,11 @@ const ImageInput = ({ Draggable }) => {
                         })}
                     </div>
                     {/* <!-- Image repeat input section ends here --> */}
-                    <button id="change-image-button" onClick={getNewImage} className="non-draggable-containers">
-                        New Background Image
-                    </button>
+                    <div className="background-image-button-container non-draggable-containers">
+                        <button id="change-image-button" onClick={getNewImage}>
+                            New Background Image
+                        </button>
+                    </div>
                 </div>
             </div>
         </Draggable>

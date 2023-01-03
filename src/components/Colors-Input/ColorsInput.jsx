@@ -10,7 +10,7 @@ import { color1Update, color2Update, alphaUpdate, gradientTypeUpdate, directionU
 const gradientTypes = ["linear", "radial"];
 const gradientDirectionNames = ["top", "left", "right", "bottom"];
 
-const ColorsInput = ({ Draggable }) => {
+const ColorsInput = ({ Draggable, handleDragStart, handleDragStop }) => {
     const nodeRef = useRef(null);
 
     const color1 = useSelector((state) => state.gradientReducer.color1);
@@ -71,7 +71,8 @@ const ColorsInput = ({ Draggable }) => {
     }
 
     return (
-        <Draggable cancel=".non-draggable-containers" nodeRef={nodeRef}>
+        <Draggable cancel=".non-draggable-containers" nodeRef={nodeRef} onStart={(e) => handleDragStart(e)}
+            onStop={(e) => handleDragStop(e)}>
             <div className="inputs-container gradient-inputs-container inputs-and-values-container"
                 ref={nodeRef}>
                 <div className='drag-target-wrapper-component'>

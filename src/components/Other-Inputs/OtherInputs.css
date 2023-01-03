@@ -4,6 +4,7 @@
     bottom: -70px;
     right: 50%;
     translate: 50%;
+    z-index: 0;
 }
 
 .other-inputs-container .drag-target-wrapper-component {

@@ -97,13 +97,27 @@ const App = () => {
     location.reload();
   }
 
+  const handleDragStart = (e) => {
+    const dragElement = e.target.parentElement;
+    dragElement.style.zIndex = 3;
+    dragElement.style.backgroundColor = color1;
+  }
+
+  const handleDragStop = (e) => {
+    const dragElement = e.target.parentElement;
+    dragElement.style.zIndex = 'initial';
+    dragElement.style.backgroundColor = (alpha >= 0.7) ? convertHexToRgbA(color1, alpha) :
+      convertHexToRgbA(color1, 0.7);
+  }
+
   return (
     <div className="App" id='App'>
       <Header />
-      <Values Draggable={Draggable} />
-      <ColorsInput Draggable={Draggable} />
-      <ImageInput Draggable={Draggable} />
-      <OtherInputs resetAllValues={resetAllValues} Draggable={Draggable} />
+      <Values Draggable={Draggable} handleDragStart={handleDragStart} handleDragStop={handleDragStop} />
+      <ColorsInput Draggable={Draggable} handleDragStart={handleDragStart} handleDragStop={handleDragStop} />
+      <ImageInput Draggable={Draggable} handleDragStart={handleDragStart} handleDragStop={handleDragStop} />
+      <OtherInputs resetAllValues={resetAllValues} Draggable={Draggable} handleDragStart={handleDragStart}
+        handleDragStop={handleDragStop} />
     </div>
   );
 }

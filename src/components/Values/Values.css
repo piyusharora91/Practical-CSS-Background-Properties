@@ -7,10 +7,7 @@
     height: 220px;
     margin: 15px auto;
     border-radius: 12px;
-    /* position: fixed;
-    bottom: 200px;
-    right: 50%;
-    translate: 50%; */
+    z-index: 0;
 }
 
 .values-container .drag-target-wrapper-component {

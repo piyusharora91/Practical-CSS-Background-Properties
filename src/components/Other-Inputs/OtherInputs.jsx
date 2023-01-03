@@ -4,14 +4,15 @@ import './OtherInputs.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fontColorUpdate } from '../../redux/features/gradientInputsSlice';
 
-const OtherInputs = ({ resetAllValues, Draggable }) => {
+const OtherInputs = ({ resetAllValues, Draggable, handleDragStart, handleDragStop }) => {
     const dispatch = useDispatch();
     const nodeRef = useRef(null);
 
     const fontColor = useSelector((state) => state.gradientReducer.fontColor);
 
     return (
-        <Draggable cancel=".non-draggable-containers" nodeRef={nodeRef}>
+        <Draggable cancel=".non-draggable-containers" nodeRef={nodeRef} onStart={(e) => handleDragStart(e)}
+            onStop={(e) => handleDragStop(e)}>
             <div className='inputs-container other-inputs-container inputs-and-values-container' ref={nodeRef}>
                 <div className="drag-target-wrapper-component">
                     <div className="container-header non-draggable-containers">

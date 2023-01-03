@@ -6,7 +6,7 @@ import { removeCamelCaseAndAddSpace } from '../../common-files/textCasingConvers
 import copyParticularSectionToClipBoard from '../../common-files/copySections';
 import returnFinalGradient from '../../common-files/returnFinalGradient';
 
-const Values = ({ Draggable }) => {
+const Values = ({ Draggable, handleDragStart, handleDragStop }) => {
     const nodeRef = useRef(null);
     //gradient input values from redux
     const color1 = useSelector((state) => state.gradientReducer.color1);
@@ -20,6 +20,8 @@ const Values = ({ Draggable }) => {
     const backgroundSize = useSelector((state) => state.imageReducer.backgroundSize);
     const backgroundPosition = useSelector((state) => state.imageReducer.backgroundPosition);
     const backgroundRepeat = useSelector((state) => state.imageReducer.backgroundRepeat);
+
+    const valuesContainer = document.querySelector('#values-container');
 
     const gradientValue = returnFinalGradient({
         color1,
@@ -38,8 +40,8 @@ const Values = ({ Draggable }) => {
     };
 
     return (
-        <Draggable cancel=".non-draggable-containers" nodeRef={nodeRef}>
-            {/* // bounds={{ left: 0, top: 0, right: 100, bottom: 200 }}> */}
+        <Draggable cancel=".non-draggable-containers" nodeRef={nodeRef} onStart={(e) => handleDragStart(e)}
+            onStop={(e) => handleDragStop(e)}>
             <div className="values-container inputs-and-values-container" id='values-container'
                 ref={nodeRef}>
                 <div className='drag-target-wrapper-component'>

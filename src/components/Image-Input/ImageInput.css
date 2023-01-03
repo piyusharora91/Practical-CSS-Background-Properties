@@ -5,6 +5,7 @@
     width: 480px;
     display: flex;
     flex-wrap: wrap;
+    z-index: 0;
 }
 
 .image-inputs-container .drag-target-wrapper-component {
@@ -19,12 +20,8 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     width: 70%;
-    margin-top: 15px;
+    padding-top: 15px;
     cursor: initial;
-}
-
-.image-size-container {
-    margin-top: 0px;
 }
 
 .image-size-container label {
@@ -94,6 +91,14 @@
     transition: 1s all;
 }
 
+.background-image-button-container {
+    width: 100%;
+    cursor: initial;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
 #change-image-button {
     height: max-content;
     width: 75%;
@@ -105,7 +110,6 @@
     border-radius: 10px;
     filter: grayscale(60%);
     cursor: pointer;
-    margin-top: 20px;
 }
 
 #change-image-button:hover {
@@ -123,7 +127,6 @@
 
     .image-size-container {
         width: 50%;
-        margin-top: 15px;
         align-items: center;
     }
 

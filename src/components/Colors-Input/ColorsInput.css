@@ -2,6 +2,7 @@
      position: fixed;
      top: 100px;
      left: -380px;
+     z-index: 0;
  }
 
  .gradient-inputs-container .drag-target-wrapper-component {
