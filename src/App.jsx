@@ -8,6 +8,7 @@ import Values from './components/Values/Values';
 import ColorsInput from './components/Colors-Input/ColorsInput';
 import ImageInput from './components/Image-Input/ImageInput';
 import OtherInputs from './components/Other-Inputs/OtherInputs';
+import Loader from './components/loader/Loader';
 
 import Draggable from "react-draggable";
 
@@ -113,6 +114,7 @@ const App = () => {
   return (
     <div className="App" id='App'>
       <Header />
+      <Loader />
       <Values Draggable={Draggable} handleDragStart={handleDragStart} handleDragStop={handleDragStop} />
       <ColorsInput Draggable={Draggable} handleDragStart={handleDragStart} handleDragStop={handleDragStop} />
       <ImageInput Draggable={Draggable} handleDragStart={handleDragStart} handleDragStop={handleDragStop} />

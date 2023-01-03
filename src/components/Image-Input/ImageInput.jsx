@@ -4,7 +4,8 @@ import axios from 'axios';
 import './ImageInput.css';
 import { changeCasingForSingleOrMultipleWords } from '../../common-files/textCasingConversions';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateImage, updateBackgroundSize, updateBackgroundPosition, updateBackgroundRepeat } from '../../redux/features/imageInputsSlice';
+import { updateImage, updateBackgroundSize, updateBackgroundPosition, updateBackgroundRepeat }
+    from '../../redux/features/imageInputsSlice';
 
 // render fields on page
 const imageSizeOptions = ['cover', 'contain'];
@@ -29,26 +30,16 @@ const ImageInput = ({ Draggable, handleDragStart, handleDragStop }) => {
     const backgroundRepeat = useSelector((state) => state.imageReducer.backgroundRepeat);
 
     const getNewImage = () => {
+        const loader = document.getElementById('loader');
+        console.log(loader);
+        loader.style.display = 'initial';
         const API_KEY = 'x3WsiXWLHCUOy84GtpkdtdwdsQgsZcvu4HBpt9O0hic';
         const API_URL = `https://api.unsplash.com/photos/random/?client_id=${API_KEY}`;
-        // <RotatingLines
-        //     strokeColor="grey"
-        //     strokeWidth="5"
-        //     animationDuration="0.75"
-        //     width="96"
-        //     visible={true}
-        // />
         axios.get(API_URL).then(response => {
             const imageData = response.data;
             dispatch(updateImage(imageData.urls.regular));
+            loader.style.display = 'none';
         });
-        // <RotatingLines
-        //     strokeColor="grey"
-        //     strokeWidth="5"
-        //     animationDuration="0.75"
-        //     width="96"
-        //     visible={false}
-        // />
     }
 
     const changeImageSize = (sizeValue) => {

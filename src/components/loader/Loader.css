@@ -1,0 +1,123 @@
+#loader {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 5;
+}
+
+.ldio-8in4zjzlzpq div {
+    left: 112.32px;
+    top: 50.309999999999995px;
+    position: absolute;
+    animation: ldio-8in4zjzlzpq linear 3.125s infinite;
+    background: #240cc5;
+    background: transparent;
+    width: 9.36px;
+    height: 39.78px;
+    border-radius: 4.68px / 5.9670000000000005px;
+    transform-origin: 4.68px 66.69px;
+}
+
+.ldio-8in4zjzlzpq div:nth-child(1) {
+    transform: rotate(0deg);
+    animation-delay: -2.8645833333333335s;
+    background: #ea3f34;
+}
+
+.ldio-8in4zjzlzpq div:nth-child(2) {
+    transform: rotate(30deg);
+    animation-delay: -2.604166666666667s;
+    background: #f2982c;
+}
+
+.ldio-8in4zjzlzpq div:nth-child(3) {
+    transform: rotate(60deg);
+    animation-delay: -2.34375s;
+    background: #52a360;
+}
+
+.ldio-8in4zjzlzpq div:nth-child(4) {
+    transform: rotate(90deg);
+    animation-delay: -2.0833333333333335s;
+    background: #674794;
+}
+
+.ldio-8in4zjzlzpq div:nth-child(5) {
+    transform: rotate(120deg);
+    animation-delay: -1.8229166666666667s;
+    background: #080808;
+}
+
+.ldio-8in4zjzlzpq div:nth-child(6) {
+    transform: rotate(150deg);
+    animation-delay: -1.5625s;
+    background: #ea3f34;
+}
+
+.ldio-8in4zjzlzpq div:nth-child(7) {
+    transform: rotate(180deg);
+    animation-delay: -1.3020833333333335s;
+    background: #f2982c;
+}
+
+.ldio-8in4zjzlzpq div:nth-child(8) {
+    transform: rotate(210deg);
+    animation-delay: -1.0416666666666667s;
+    background: #52a360;
+}
+
+.ldio-8in4zjzlzpq div:nth-child(9) {
+    transform: rotate(240deg);
+    animation-delay: -0.78125s;
+    background: #674794;
+}
+
+.ldio-8in4zjzlzpq div:nth-child(10) {
+    transform: rotate(270deg);
+    animation-delay: -0.5208333333333334s;
+    background: #080808;
+}
+
+.ldio-8in4zjzlzpq div:nth-child(11) {
+    transform: rotate(300deg);
+    animation-delay: -0.2604166666666667s;
+    background: #ea3f34;
+}
+
+.ldio-8in4zjzlzpq div:nth-child(12) {
+    transform: rotate(330deg);
+    animation-delay: 0s;
+    background: #f2982c;
+}
+
+.loadingio-spinner-spinner-2fe5qyf9ckl {
+    width: 234px;
+    height: 234px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.ldio-8in4zjzlzpq {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    transform-origin: 0 0;
+}
+
+.ldio-8in4zjzlzpq div {
+    box-sizing: content-box;
+}
+
+@keyframes ldio-8in4zjzlzpq {
+    0% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0
+    }
+}
